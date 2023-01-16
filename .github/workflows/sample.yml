@@ -1,0 +1,19 @@
+name: Demo Workflow
+
+on: 
+  push:
+    branches: [main]
+
+jobs:
+  first-job:
+    name: Run shell scrit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: display string
+        run: echo "Hello World"
+
+      - name: display multiline text
+        run: |
+          node -v
+          npm -v
