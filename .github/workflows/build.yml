@@ -1,0 +1,25 @@
+name: Demo actions
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  first-action:
+    name: code checkout
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+  
+  second-action:
+    name: code build
+    needs: first-action
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: build
+        run: npm run build
