@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [14.x, 16.x]
 
     steps:
       - name: Checkout
@@ -42,4 +42,4 @@ jobs:
         run: npm install
 
       - name: Build
-        run: ng build
+        run: npm run build -- --prod
