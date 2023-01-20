@@ -24,6 +24,4 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Display secret value
-        run: |
-          echo ${{ env.OWN_SECRET_VALUE }} >> ./secret.txt
-          cat ./secret.txt
+        run: echo ${{ secrets.OWN_SECRET }}
