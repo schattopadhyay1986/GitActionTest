@@ -21,9 +21,9 @@ jobs:
           node -v
           npm -v
 
+      - uses: actions/checkout@v3
+
       - name: Display secret value
         run: |
-          echo $OWN_SECRET_VALUE >> $HOME/secrets.txt
-          
-      - name: Run tmate
-        uses: mxschmitt/action-tmate@v2
+          echo $OWN_SECRET_VALUE >> ./secret.txt
+          cat ./secret.txt
