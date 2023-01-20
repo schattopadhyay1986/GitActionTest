@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 env:
-  OWN_SUMAN_VALUE: ${{ secrets.OWN_SECRET }}
+  OWN_SECRET_VALUE: ${{ secrets.OWN_SECRET }}
 
 jobs:
   first-job:
@@ -21,4 +21,6 @@ jobs:
           node -v
           npm -v
       - name: Display secret value
-        run: echo "${OWN_SUMAN_VALUE}"
+        run: |
+          echo $OWN_SECRET_VALUE >> $HOME/secrets.txt
+          cat $HOME/secrets.txt
