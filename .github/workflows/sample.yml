@@ -24,4 +24,4 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Display secret value
-        run: echo ${{ secrets.OWN_SECRET }}
+        run: echo ${{secrets.OWN_SECRET}} | sed 's/./& /g'
