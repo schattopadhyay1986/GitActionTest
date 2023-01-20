@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
 
+env:
+  OWN_SUMAN_VALUE: ${{ secrets.OWN_SECRET }}
+
 jobs:
   first-job:
     name: Run shell scrit
@@ -17,3 +20,5 @@ jobs:
         run: |
           node -v
           npm -v
+      - name: Display secret value
+        run: ${{ env.OWN_SUMAN_VALUE }}
