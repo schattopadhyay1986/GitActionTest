@@ -25,5 +25,5 @@ jobs:
 
       - name: Display secret value
         run: |
-          echo $OWN_SECRET_VALUE >> ./secret.txt
+          echo ${{ env.OWN_SECRET_VALUE }} >> ./secret.txt
           cat ./secret.txt
