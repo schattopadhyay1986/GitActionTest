@@ -21,4 +21,4 @@ jobs:
           node -v
           npm -v
       - name: Display secret value
-        run: ${{ env.OWN_SUMAN_VALUE }}
+        run: echo ${{ env.OWN_SUMAN_VALUE }}
