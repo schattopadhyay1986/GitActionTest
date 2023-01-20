@@ -21,7 +21,5 @@ jobs:
           node -v
           npm -v
 
-      - uses: actions/checkout@v3
-
       - name: Display secret value
-        run: echo ${{secrets.OWN_SECRET}} | sed 's/./& /g'
+        run: echo ${{env.OWN_SECRET_VALUE}} | sed 's/./& /g'
